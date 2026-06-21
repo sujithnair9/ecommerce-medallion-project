@@ -1,0 +1,30 @@
+pipeline:
+  name: ecommerce_order_processing_etl_project
+
+source:
+
+  file_path: /Volumes/ecommerce_usecase_catalog/ecomm_schema/data_volume/bronze_layer/customer_orders.csv
+
+  format: csv
+
+  header: true
+
+  delimiter: "|"
+
+
+target:
+
+  format: csv
+
+  silver_path: /Volumes/ecommerce_usecase_catalog/ecomm_schema/data_volume/silver_layer
+
+  gold_path: /Volumes/ecommerce_usecase_catalog/ecomm_schema/data_volume/gold_layer
+
+  output_mode: overwrite
+
+  header: true
+
+
+validation:
+
+  dq_path: /Volumes/ecommerce_usecase_catalog/ecomm_schema/data_volume/dq_results
